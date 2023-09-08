@@ -180,10 +180,10 @@ view: poc_google_analytics {
     group_item_label: "Network Domain"
   }
   dimension: geo_network__network_location {
-    type: string
-    sql: ${TABLE}.geoNetwork.networkLocation ;;
-    group_label: "Geo Network"
-    group_item_label: "Network Location"
+    label: "Location"
+    type: location
+    sql_latitude: ${TABLE}.geoNetwork.latitude ;;
+    sql_longitude: ${TABLE}.geoNetwork.longitude ;;
   }
   dimension: geo_network__region {
     type: string
