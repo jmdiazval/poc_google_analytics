@@ -159,14 +159,6 @@ view: poc_google_analytics {
     group_label: "Geo Network"
     group_item_label: "Longitude"
   }
-
-  dimension: NEW_FIELD_location {
-    label: "Location"
-    type: location
-    sql_latitude: ${TABLE}.geoNetwork.latitude ;;
-    sql_longitude: ${TABLE}.geoNetwork.longitude ;;
-  }
-
   dimension: geo_network__metro {
     type: string
     sql: ${TABLE}.geoNetwork.metro ;;
