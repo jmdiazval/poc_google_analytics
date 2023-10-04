@@ -22,6 +22,23 @@ view: poc_google_analytics {
     type: string
     sql: ${TABLE}.formatted_date ;;
   }
+
+
+  dimension_group: creation_date {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.formatted_date ;;
+  }
+
   dimension: device__browser {
     type: string
     sql: ${TABLE}.device.browser ;;
