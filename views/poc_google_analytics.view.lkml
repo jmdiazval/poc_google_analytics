@@ -17,6 +17,11 @@ view: poc_google_analytics {
     type: string
     sql: ${TABLE}.date ;;
   }
+
+  dimension: real_date {
+    type: string
+    sql: ${TABLE}.formatted_date ;;
+  }
   dimension: device__browser {
     type: string
     sql: ${TABLE}.device.browser ;;
