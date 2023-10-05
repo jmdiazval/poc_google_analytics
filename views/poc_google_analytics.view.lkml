@@ -170,13 +170,13 @@ view: poc_google_analytics {
     group_item_label: "Country"
   }
   dimension: geo_network__latitude {
-    type: string
+    type: number
     sql: ${TABLE}.geoNetwork.latitude ;;
     group_label: "Geo Network"
     group_item_label: "Latitude"
   }
   dimension: geo_network__longitude {
-    type: string
+    type: number
     sql: ${TABLE}.geoNetwork.longitude ;;
     group_label: "Geo Network"
     group_item_label: "Longitude"
