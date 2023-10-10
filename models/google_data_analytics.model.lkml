@@ -2,6 +2,7 @@ connection: "poc_google_analytics"
 
 # include all the views
 include: "/views/**/*.view.lkml"
+include: "/**.view.lkml"
 
 datagroup: google_data_analytics_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
@@ -67,4 +68,3 @@ explore: poc_google_analytics {
       relationship: one_to_many
     }
 }
-
