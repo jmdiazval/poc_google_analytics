@@ -922,6 +922,10 @@ view: poc_google_analytics__hits {
     group_item_label: "Page Title"
   }
 
+  measure: count {
+    type: count
+  }
+
   measure: page__page_title_sum {
     type: count_distinct
     sql: ${TABLE}.page.pageTitle ;;
