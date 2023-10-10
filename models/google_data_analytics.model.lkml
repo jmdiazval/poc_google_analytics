@@ -67,10 +67,4 @@ explore: poc_google_analytics {
       sql: LEFT JOIN UNNEST(${poc_google_analytics__hits__product.custom_dimensions}) as poc_google_analytics__hits__product__custom_dimensions ;;
       relationship: one_to_many
     }
-
-  join: sum_page_titles {
-    view_label: "Poc Google Analytics:sum_page_titles"
-    sql: LEFT JOIN UNNEST(${poc_google_analytics__hits.page__page_title}) as poc_google_analytics__hits__product__page_title ;;
-    relationship: one_to_many
-  }
 }
