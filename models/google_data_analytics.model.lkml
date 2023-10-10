@@ -68,6 +68,11 @@ explore: poc_google_analytics {
     }
 }
 
+explore: sql_runner_explore {
+  view_name: sql_runner_query
+  # Add any additional configurations as needed
+}
+
 view: sql_runner_query {
   derived_table: {
     sql: SELECT page.pageTitle, COUNT(*) as count
