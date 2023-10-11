@@ -39,6 +39,11 @@ view: poc_google_analytics {
     sql: ${TABLE}.formatted_date ;;
   }
 
+  dimension: day_of_week {
+    type: date_day_of_week
+    sql: ${TABLE}.formatted_date ;;
+  }
+
   dimension: device__browser {
     type: string
     sql: ${TABLE}.device.browser ;;
