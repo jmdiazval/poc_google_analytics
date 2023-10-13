@@ -314,6 +314,24 @@ view: poc_google_analytics {
     {% endif %}
     ;;
   }
+
+  measure: totals__transaction_revenue_sum {
+    type: sum
+    sql: ${TABLE}.totals.transactionRevenue ;;
+    group_label: "Totals"
+    group_item_label: "Transaction Revenue"
+    html:
+    {% if value > 1000000000 %}
+    {{ value | divided_by: 1000000000 | round:0}}B €
+    {% elsif value >= 1000000 and value < 1000000000 %}
+    {{ value | divided_by: 1000000 | round:0}}M €
+    {% elsif value >= 1000 and value < 1000000 %}
+    {{ value | divided_by: 1000 | round:0}}K €
+    {% elsif value >= 0 and value < 1000 %}
+    {{ value | round:0}} €
+    {% endif %}
+    ;;
+  }
   dimension: totals__transactions {
     type: number
     sql: ${TABLE}.totals.transactions ;;
