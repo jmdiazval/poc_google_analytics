@@ -282,7 +282,7 @@ view: poc_google_analytics {
   }
   dimension: totals__total_transaction_revenue {
     type: number
-    sql: ${TABLE}.totals.totalTransactionRevenue ;;
+    sql: ${TABLE}.totals.totalTransactionRevenue/1000000 ;;
     group_label: "Totals"
     group_item_label: "Total Transaction Revenue"
     html:
@@ -299,7 +299,7 @@ view: poc_google_analytics {
   }
   dimension: totals__transaction_revenue {
     type: number
-    sql: ${TABLE}.totals.transactionRevenue ;;
+    sql: ${TABLE}.totals.transactionRevenue/1000000 ;;
     group_label: "Totals"
     group_item_label: "Transaction Revenue"
     html:
@@ -317,7 +317,7 @@ view: poc_google_analytics {
 
   measure: totals__transaction_revenue_sum {
     type: sum
-    sql: ${TABLE}.totals.transactionRevenue ;;
+    sql: ${TABLE}.totals.transactionRevenue/1000000 ;;
     group_label: "Totals"
     group_item_label: "Transaction Revenue"
     html:
@@ -334,10 +334,18 @@ view: poc_google_analytics {
   }
   dimension: totals__transactions {
     type: number
-    sql: ${TABLE}.totals.transactions ;;
+    sql: COALESCE(${TABLE}.totals.transactions, 0) ;;
     group_label: "Totals"
     group_item_label: "Transactions"
   }
+
+  measure: totals__transactions_sum{
+    type: sum
+    sql:  ${TABLE}.totals.transactions ;;
+    group_label: "Totals"
+    group_item_label: "Transactions"
+  }
+
   dimension: totals__unique_screenviews {
     type: number
     sql: ${TABLE}.totals.uniqueScreenviews ;;
